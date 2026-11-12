@@ -1,19 +1,18 @@
 # ==============================================================================
 # Security & Critical Sensitive Data (MUST NEVER BE COMMITTED)
 # ==============================================================================
-# Database credentials
-application/config/database.php
-application/config/*/database.php
-!application/config/database.php.example
+# Sensitive Credentials & Environment Configs (STANDAR_SECURITY_ENV.md)
+# application/config/database.php hanya berisi loader (tanpa kredensial) -> boleh di-commit
+.env
+.env.*
+.env.php
+.env_config/
+!.env.php.example
+!.env.example
 
 # Email credentials & sensitive configs
 application/config/email.php
 application/config/*/email.php
-
-# Environment variables & secrets
-.env
-.env.*
-!.env.example
 
 # Private keys, certificates, and authentication tokens
 *.pem

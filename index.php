@@ -66,7 +66,9 @@
 switch (ENVIRONMENT)
 {
 	case 'development':
-		error_reporting(-1);
+		// CI 3.1.11 belum kompatibel penuh dengan PHP 8.2+ (dynamic property deprecation),
+		// sehingga E_DEPRECATED disembunyikan agar tidak merusak output/header/session.
+		error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
 		ini_set('display_errors', 1);
 	break;
 

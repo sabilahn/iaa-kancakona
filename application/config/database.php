@@ -73,13 +73,57 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
+/*
+| -------------------------------------------------------------------
+| KREDENSIAL DATABASE (STANDAR_SECURITY_ENV.md)
+| -------------------------------------------------------------------
+| Kredensial TIDAK disimpan di file ini / di repository. Dibaca dari file
+| PHP (berguard BASEPATH) di luar public_html, urutan pencarian:
+|   1. <parent 2 level dari project>/.env_config/<project_key>.php
+|   2. <parent 1 level dari project>/.env_config/<project_key>.php
+|   3. $_SERVER['HOME']/.env_config/<project_key>.php  (cPanel)
+|   4. <root project>/.env.php                         (development lokal)
+| Template: .env.php.example
+*/
+
+// Identitas unik project -> nama file di .env_config/
+$project_key = 'kancakona';
+
+$possible_env_paths = array(
+	// 1. Project di subfolder public_html/<project> -> /home/username/.env_config/
+	dirname(FCPATH, 2) . DIRECTORY_SEPARATOR . '.env_config' . DIRECTORY_SEPARATOR . $project_key . '.php',
+
+	// 2. Project langsung di root public_html -> /home/username/.env_config/
+	dirname(FCPATH, 1) . DIRECTORY_SEPARATOR . '.env_config' . DIRECTORY_SEPARATOR . $project_key . '.php',
+
+	// 3. Fallback variabel HOME di cPanel (/home/username/.env_config/...)
+	( ! empty($_SERVER['HOME']) ? rtrim($_SERVER['HOME'], '/\\') . DIRECTORY_SEPARATOR . '.env_config' . DIRECTORY_SEPARATOR . $project_key . '.php' : ''),
+
+	// 4. Fallback di dalam folder project sendiri (development lokal)
+	FCPATH . '.env.php',
+);
+
+$env_db = array();
+foreach ($possible_env_paths as $env_path)
+{
+	if ($env_path !== '' && is_file($env_path) && is_readable($env_path))
+	{
+		$loaded_env = include $env_path;
+		if (is_array($loaded_env))
+		{
+			$env_db = $loaded_env;
+			break;
+		}
+	}
+}
+
 $db['default'] = array(
-	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'database_name',
-	'dbdriver' => 'mysqli',
+	'dsn'	=> isset($env_db['DB_DSN']) ? $env_db['DB_DSN'] : '',
+	'hostname' => isset($env_db['DB_HOST']) ? $env_db['DB_HOST'] : 'localhost',
+	'username' => isset($env_db['DB_USER']) ? $env_db['DB_USER'] : '',
+	'password' => isset($env_db['DB_PASS']) ? $env_db['DB_PASS'] : '',
+	'database' => isset($env_db['DB_NAME']) ? $env_db['DB_NAME'] : '',
+	'dbdriver' => isset($env_db['DB_DRIVER']) ? $env_db['DB_DRIVER'] : 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
