@@ -10,3 +10,11 @@ Health
  [x] Is defined app path
  [x] Base url has been set
 
+Migrated Modules
+ [x] Qr generator produces valid png
+ [x] Cetak pdf renders valid pdf bytes
+ [x] Transaksi investasi update saldo user accumulates correctly
+ [x] Transaksi investasi get hari transaksi never divides by zero
+ [x] Api users controller does not expose userpass
+ [x] Api model get users sql selects safe columns only
+

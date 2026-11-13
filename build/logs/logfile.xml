@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="CLI Arguments" tests="8" assertions="13" errors="0" failures="0" skipped="0" time="0.397389">
-    <testsuite name="AuthSecurityTest" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/AuthSecurityTest.php" tests="6" assertions="11" errors="0" failures="0" skipped="0" time="0.386836">
-      <testcase name="testEnvConfigLoadsDatabaseName" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/AuthSecurityTest.php" line="21" class="AuthSecurityTest" classname="AuthSecurityTest" assertions="1" time="0.023287"/>
-      <testcase name="testLazyMd5PasswordUpgradeCallsUpdatePassword" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/AuthSecurityTest.php" line="26" class="AuthSecurityTest" classname="AuthSecurityTest" assertions="4" time="0.145781"/>
-      <testcase name="testBcryptPasswordVerifiesWithoutRehash" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/AuthSecurityTest.php" line="59" class="AuthSecurityTest" classname="AuthSecurityTest" assertions="3" time="0.210386"/>
-      <testcase name="testAuthFilterRedirectsWhenUnauthenticated" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/AuthSecurityTest.php" line="84" class="AuthSecurityTest" classname="AuthSecurityTest" assertions="1" time="0.005398"/>
-      <testcase name="testRoleFilterRejectsNonSuperUser" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/AuthSecurityTest.php" line="92" class="AuthSecurityTest" classname="AuthSecurityTest" assertions="1" time="0.001032"/>
-      <testcase name="testRoleFilterAllowsSuperUser" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/AuthSecurityTest.php" line="102" class="AuthSecurityTest" classname="AuthSecurityTest" assertions="1" time="0.000951"/>
+  <testsuite name="CLI Arguments" tests="14" assertions="27" errors="0" failures="0" skipped="0" time="0.525807">
+    <testsuite name="AuthSecurityTest" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/AuthSecurityTest.php" tests="6" assertions="11" errors="0" failures="0" skipped="0" time="0.385212">
+      <testcase name="testEnvConfigLoadsDatabaseName" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/AuthSecurityTest.php" line="21" class="AuthSecurityTest" classname="AuthSecurityTest" assertions="1" time="0.024216"/>
+      <testcase name="testLazyMd5PasswordUpgradeCallsUpdatePassword" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/AuthSecurityTest.php" line="26" class="AuthSecurityTest" classname="AuthSecurityTest" assertions="4" time="0.145833"/>
+      <testcase name="testBcryptPasswordVerifiesWithoutRehash" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/AuthSecurityTest.php" line="59" class="AuthSecurityTest" classname="AuthSecurityTest" assertions="3" time="0.203865"/>
+      <testcase name="testAuthFilterRedirectsWhenUnauthenticated" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/AuthSecurityTest.php" line="84" class="AuthSecurityTest" classname="AuthSecurityTest" assertions="1" time="0.008102"/>
+      <testcase name="testRoleFilterRejectsNonSuperUser" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/AuthSecurityTest.php" line="92" class="AuthSecurityTest" classname="AuthSecurityTest" assertions="1" time="0.001785"/>
+      <testcase name="testRoleFilterAllowsSuperUser" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/AuthSecurityTest.php" line="102" class="AuthSecurityTest" classname="AuthSecurityTest" assertions="1" time="0.001412"/>
     </testsuite>
-    <testsuite name="HealthTest" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/HealthTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.010553">
-      <testcase name="testIsDefinedAppPath" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/HealthTest.php" line="12" class="HealthTest" classname="HealthTest" assertions="1" time="0.000984"/>
-      <testcase name="testBaseUrlHasBeenSet" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/HealthTest.php" line="17" class="HealthTest" classname="HealthTest" assertions="1" time="0.009569"/>
+    <testsuite name="HealthTest" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/HealthTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.014867">
+      <testcase name="testIsDefinedAppPath" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/HealthTest.php" line="12" class="HealthTest" classname="HealthTest" assertions="1" time="0.001556"/>
+      <testcase name="testBaseUrlHasBeenSet" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/HealthTest.php" line="17" class="HealthTest" classname="HealthTest" assertions="1" time="0.013311"/>
+    </testsuite>
+    <testsuite name="MigratedModulesTest" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/MigratedModulesTest.php" tests="6" assertions="14" errors="0" failures="0" skipped="0" time="0.125728">
+      <testcase name="testQrGeneratorProducesValidPng" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/MigratedModulesTest.php" line="21" class="MigratedModulesTest" classname="MigratedModulesTest" assertions="2" time="0.038479"/>
+      <testcase name="testCetakPdfRendersValidPdfBytes" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/MigratedModulesTest.php" line="30" class="MigratedModulesTest" classname="MigratedModulesTest" assertions="1" time="0.067133"/>
+      <testcase name="testTransaksiInvestasiUpdateSaldoUserAccumulatesCorrectly" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/MigratedModulesTest.php" line="53" class="MigratedModulesTest" classname="MigratedModulesTest" assertions="1" time="0.001969"/>
+      <testcase name="testTransaksiInvestasiGetHariTransaksiNeverDividesByZero" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/MigratedModulesTest.php" line="84" class="MigratedModulesTest" classname="MigratedModulesTest" assertions="3" time="0.003644"/>
+      <testcase name="testApiUsersControllerDoesNotExposeUserpass" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/MigratedModulesTest.php" line="97" class="MigratedModulesTest" classname="MigratedModulesTest" assertions="4" time="0.012910"/>
+      <testcase name="testApiModelGetUsersSqlSelectsSafeColumnsOnly" file="/Users/hoirilmochtar/Downloads/PROJECT/kancakona/tests/unit/MigratedModulesTest.php" line="138" class="MigratedModulesTest" classname="MigratedModulesTest" assertions="3" time="0.001593"/>
     </testsuite>
   </testsuite>
 </testsuites>
