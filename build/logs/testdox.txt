@@ -1,0 +1,12 @@
+Auth Security
+ [x] Env config loads database name
+ [x] Lazy md 5 password upgrade calls update password
+ [x] Bcrypt password verifies without rehash
+ [x] Auth filter redirects when unauthenticated
+ [x] Role filter rejects non super user
+ [x] Role filter allows super user
+
+Health
+ [x] Is defined app path
+ [x] Base url has been set
+

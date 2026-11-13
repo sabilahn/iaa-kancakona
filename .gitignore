@@ -131,12 +131,24 @@ $RECYCLE.BIN/
 *~
 
 # ==============================================================================
-# CodeIgniter Framework Specific Rules
+# CodeIgniter 4 Writable & Framework Specific Rules
 # ==============================================================================
-!application/*/.htaccess
-user_guide_src/build/*
-user_guide_src/cilexer/build/*
-user_guide_src/cilexer/dist/*
-user_guide_src/cilexer/pycilexer.egg-info/*
+/writable/cache/*
+!/writable/cache/index.html
+/writable/logs/*
+!/writable/logs/index.html
+/writable/session/*
+!/writable/session/index.html
+/writable/uploads/*
+!/writable/uploads/index.html
+/writable/debugbar/*
+!/writable/debugbar/index.html
+/public/assets/uploads/*
+!/public/assets/uploads/.gitkeep
+/tests/coverage*
 /tests/tests/
 /tests/results/
+/results/
+/phpunit
+/phpunit.xml
+_modules/*
